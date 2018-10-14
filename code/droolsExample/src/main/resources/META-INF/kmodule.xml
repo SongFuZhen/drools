@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
-    <kbase name="orderRuleKB" packages="rules">
-        <ksession name="orderRuleKS"/>
-    </kbase>
-
-    <kbase name="personRuleKB" packages="rules">
-        <ksession name="personRuleKS"/>
+    <kbase name="baseRuleKB" packages="rules">
+        <ksession name="baseRuleKS"/>
     </kbase>
 </kmodule>

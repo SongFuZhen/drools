@@ -16,7 +16,7 @@ public class PersonExample {
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
 
-        return kieContainer.newKieSession("personRuleKS");
+        return kieContainer.newKieSession("baseRuleKS");
     }
 
     public static void run() {

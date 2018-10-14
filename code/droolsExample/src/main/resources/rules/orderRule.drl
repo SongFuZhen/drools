@@ -48,9 +48,31 @@ rule "add1000"
     lock-on-active true
     salience 1
     when
-        $s : Order(amount.compareTo(BigDecimal.valueOf(1000)) == 1)
+        $s : Order(amount.compareTo(BigDecimal.valueOf(1000)) == 1 && amount.compareTo(BigDecimal.valueOf(1500)) == -1)
     then
         $s.setScore(1000);
         update($s);
         printInfo($s.getId(), $s.getNr(), $s.getScore(), $s.getAmount());
-end    
+end
+
+rule "add1500"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount.compareTo(BigDecimal.valueOf(1500)) == 1 && amount.compareTo(BigDecimal.valueOf(2000)) == -1)
+    then
+        $s.setScore(1500);
+        update($s);
+end
+
+rule "add2000"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $s : Order(amount.compareTo(BigDecimal.valueOf(2000)) == 1)
+    then
+        $s.setScore(2000);
+        update($s);
+end
